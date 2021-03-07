@@ -1,0 +1,48 @@
+{
+	"name": "vscode-open-in-terminal-tab-context-menu",
+	"displayName": "VSCode Open in Terminal Tab Context Menu",
+	"description": "This extension adds 'Open in Terminal' to tab context menu",
+	"version": "1.0.0",
+	"publisher": "ramon-ahnert",
+	"repository": "https://github.com/rahmon/vscode-open-in-terminal-tab-context-menu",
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.openInTerminal"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.openInTerminal",
+				"title": "Open in terminal"
+			}
+		],
+		"menus": {
+			"editor/title/context": [
+				{
+					"command": "extension.openInTerminal",
+					"group": "3_open"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.34.0",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"eslint": "^7.21.0",
+		"typescript": "^4.2.2"
+	}
+}
